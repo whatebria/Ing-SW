@@ -1,0 +1,16 @@
+<form action="post">
+    {% csrf_token %}
+    {% for pregunta in preguntas %}
+        <div>
+            <label >{{ pregunta.test }}</label>
+            {% if pregunta.tipo == 'Desarrollo' %}
+                <textarea name="pregunta_{{ pregunta.id }}" id=""></textarea>
+            {% elif pregunta.tipo == 'Seleccion Multiple' %}
+                {% for tipo in pregunta.tipo.all %}
+                <input type="seleccionMultiple" name="pregunta_{{ pregunta.id }}" value="{{ tipo.id }}">{{ tipo.id }}
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
+    <button type="submit">Enviar Respuestas</button>
+</form>

@@ -1,0 +1,24 @@
+{% extends 'pivote/home.html' %}
+
+{% block content %}
+
+<h1>Creacion de test</h1>
+<form hx-post="{% url 'create-pregunta' %}" hx-swap="beforeend" hx-on::after-request="this.remove()" hx-trigger="click from:#submit-all">
+    <div id="formPreguntas" class="p-4">
+        {% include 'pivote/preguntas.html' %}
+    </div>
+</form>
+
+
+<div class="col-6 col-sm-6 p-5 align-self-end">
+    <button type="button" class="btn btn-success"
+        hx-get="{% url 'create-pregunta' %}"
+        hx-target="#formPreguntas"
+        hx-swap="beforeend"
+        > + Add Pregunta </button>
+    
+    <button type="button" class="btn btn-primary" id="submit-all">Submit all</button>
+</div>
+
+
+{% endblock %}

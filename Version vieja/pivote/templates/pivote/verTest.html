@@ -1,0 +1,11 @@
+{% extends 'pivote/home.html' %}
+
+{% block content %}
+{% for pregunta in test %} 
+<li>
+    <h1>Pregunta {{ forloop.counter }}</h1>
+    <h3 class="texto">{{ pregunta.Enunciado }}</h3>
+    <p class="texto">Respuesta: {{ pregunta.Respuesta }}</p>
+</li>
+{% endfor %}
+{% endblock %}

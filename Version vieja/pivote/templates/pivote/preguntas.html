@@ -1,0 +1,8 @@
+{% extends 'pivote/home.html' %}
+
+{% block content %}
+<form method="post" hx-post="{% url 'crear_preguntas' test.id %}" hx-swap="outerHTML">
+    {% csrf_token %}
+    {{ question_formset.management_form }}
+</form>
+{% endblock %}
