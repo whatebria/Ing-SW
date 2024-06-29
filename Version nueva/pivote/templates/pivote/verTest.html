@@ -4,8 +4,7 @@
 {% for pregunta in test %}
 <li>
     <h1>Pregunta {{ forloop.counter }}</h1>
-    <h3 class="texto">{{ pregunta.Enunciado }}</h3>
-    <p class="texto">Respuesta: {{ pregunta.Respuesta }}</p>
+    <h3 class="texto">{{ pregunta.enunciado }}</h3>
 </li>
 {% endfor %}
 {% endblock %}

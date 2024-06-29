@@ -12,8 +12,8 @@ class User(models.Model):
 
 
 class Preguntas(models.Model):
-    Id = models.IntegerField
-    Enunciado = models.CharField(max_length=500)
-    Tipo = models.CharField(max_length=100)
-    Respuesta = models.CharField(max_length=128)
-    
+    enunciado = models.CharField(max_length=500)
+    opcionA = models.CharField(max_length=50, null=True, blank=True)   
+    opcionB = models.CharField(max_length=50, null=True, blank=True)   
+    opcionC = models.CharField(max_length=50, null=True, blank=True)   
+    opcionD = models.CharField(max_length=50, null=True, blank=True)   

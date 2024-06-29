@@ -66,11 +66,14 @@ class FormPreguntas(forms.ModelForm):
     class Meta:
         model = Preguntas
         fields = (
-            'id', 'Enunciado', 'Tipo', 'Respuesta'
+            'enunciado', 'opcionA', 'opcionB', 'opcionC', 'opcionD'
         )
         widgets = {
-            'Enunciado': forms.TextInput(attrs={'class': 'form-control'}),
-            'Tipo': forms.Select(choices=TIPOS, attrs={'class': 'form-control'}),
-            'Respuesta': forms.TextInput(attrs={'class': 'form-control'})
+            'enunciado': forms.TextInput(attrs={'class': 'form-control'}),
+            'opcionA': forms.TextInput(attrs={'class': 'form-control'}),
+            'opcionB': forms.TextInput(attrs={'class': 'form-control'}),
+            'opcionC': forms.TextInput(attrs={'class': 'form-control'}),
+            'opcionD': forms.TextInput(attrs={'class': 'form-control'}),
+
         }
 

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm, FormPreguntas
 from .models import Preguntas
 
@@ -33,10 +33,10 @@ def create_pregunta(request):
         form = FormPreguntas(request.POST or None)
         if form.is_valid():
             test = form.save()
-            context = {'test': test}
-            return render(request, 'pivote/verTest.html', context)
-
-    return render(request, 'pivote/preguntas.html', {'form': FormPreguntas})
+            return redirect('pivote/verTest.html')
+    else:
+        test = FormPreguntas()
+    return render(request, 'pivote/preguntas.html', {'form': test})
 
 def verTest(request):
     context = {'form': FormPreguntas, 

@@ -3,18 +3,7 @@
     {% csrf_token %}
     <h2 class="texto">Nueva Pregunta</h2>
 
-    <div class="row">
-        <label for="{{ form.Enunciado.id_for_label }}">{{ form.Enunciado.label }}</label>
-        {{ form.Enunciado }}
-    </div> 
-    <div class="row">
-        <label for="{{ form.Tipo.id_for_label }}">{{ form.Tipo.label }}</label>
-        {{ form.Tipo }}
-    </div>
-    <div class="row">
-        <label for="{{ form.Respuesta.id_for_label }}">{{ form.Respuesta.label }}</label>
-            {{ form.Respuesta }}
-    </div>
+        {{ form.as_p }}
             
 </form>
 
